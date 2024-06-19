@@ -1,4 +1,5 @@
 import random
+import time
 
 OPERATORS = ["+", "-", "*"]
 MIN_OPERAND = 0
@@ -18,6 +19,10 @@ def generate_problem():
 
 expr, answer = generate_problem()
 
+input("Press enter to start!")
+print("---------------------")
+
+start_time = time.time()
 
 for i in range(TOTAL_PROBLEMS):
     expr, answer = generate_problem()
@@ -27,3 +32,11 @@ for i in range(TOTAL_PROBLEMS):
 
         if guess == str(answer):
             break
+
+        print("Try again!!!!!")
+
+end_time = time.time()
+total_time = end_time - start_time
+
+print("---------------------")
+print("Nice one! Time taken:", round(total_time), "seconds")
